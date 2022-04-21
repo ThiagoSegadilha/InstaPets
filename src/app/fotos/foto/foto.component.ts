@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-foto',
@@ -9,8 +9,8 @@ export class FotoComponent implements OnInit {
 
   constructor() { }
 
-  descricao = 'gatosFilhotes';
-  url = 'https://i1.wp.com/gatinhobranco.com/wp-content/uploads/2020/11/gatos-brigando-demais-atacando.jpg?fit=1200%2C800&ssl=1';
+  @Input() descricao = '';
+  @Input() url = '';
 
   ngOnInit(): void {
   }
