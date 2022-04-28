@@ -4,14 +4,13 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { FotoComponent } from "./foto/foto.component";
 import { FotoListaComponent } from './foto-lista/foto-lista.component';
+import { FotoFormComponent } from './foto-form/foto-form.component';
 
 @NgModule({
   declarations: [
     FotoComponent,
-    FotoListaComponent
-  ],
-  exports: [
-    FotoListaComponent
+    FotoListaComponent,
+    FotoFormComponent
   ],
   imports: [
     HttpClientModule,
