@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
-import { PhotosModule } from './photos/photos.module';
+import {FotosModule} from "./fotos/fotos.module";
 
 @NgModule({
   declarations: [
@@ -10,7 +10,7 @@ import { PhotosModule } from './photos/photos.module';
   ],
   imports: [
     BrowserModule,
-    PhotosModule
+    FotosModule
   ],
   providers: [],
   bootstrap: [AppComponent]
