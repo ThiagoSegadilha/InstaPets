@@ -1,10 +1,5 @@
-<h1> {{ titulo }}
-
-  <app-foto
+<ap-photo
     *ngFor="let foto of fotos"
     [url]="foto.url"
-    [descricao]="foto.declaracao"
-  >
-  </app-foto>
-
-
+    [description]="foto.descricao">
+</ap-photo>

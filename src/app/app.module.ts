@@ -1,16 +1,16 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
-import {FotosModule} from "./fotos/fotos.module";
+import { PhotosModule } from './photos/photos.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    FotosModule
+    PhotosModule
   ],
   providers: [],
   bootstrap: [AppComponent]
