@@ -16,6 +16,6 @@ export class FotoService {
   listFromUser(userName: string) {
 
     return this.httpClient
-                .get<Foto[]>(API + '/flavio/photos')
+                .get<Foto[]>(API + '/' + userName + '/photos')
   }
 }
