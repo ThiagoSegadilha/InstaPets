@@ -12,7 +12,7 @@ export class FotoListaResolver implements Resolve<Observable<Foto[]>>{
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Foto[]> {
     const userName = route.params.userName;
-    return this.service.listFromUser(userName);
+    return this.service.listFromUserPaginacao(userName, 1);
   }
 
 }

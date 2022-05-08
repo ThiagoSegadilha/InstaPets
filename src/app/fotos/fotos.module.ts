@@ -8,6 +8,7 @@ import { FotoFormComponent } from './foto-form/foto-form.component';
 import { FotosComponent } from './foto-lista/fotos/fotos.component';
 import { FiltroPorDescricao } from "./foto-lista/filtro-por-descricao.pipe";
 import {FotoListaResolver} from "./foto-lista/foto-lista.resolver";
+import { BotaoLoadComponent } from './foto-lista/botao-load/botao-load.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import {FotoListaResolver} from "./foto-lista/foto-lista.resolver";
     FotoFormComponent,
     FotosComponent,
     FiltroPorDescricao,
+    BotaoLoadComponent,
   ],
   // exports: [
   //   FotoListaResolver

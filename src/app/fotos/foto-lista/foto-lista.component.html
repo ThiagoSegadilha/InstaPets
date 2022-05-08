@@ -11,3 +11,5 @@
 </div>
 
 <app-fotos [fotos]="fotos | filtrarPorDescricao: filtro"></app-fotos>
+
+<app-botao-load (click)="load()" [hasMore]="hasMore"></app-botao-load>
