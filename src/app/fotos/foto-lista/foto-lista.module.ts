@@ -7,12 +7,14 @@ import {FiltroPorDescricao} from "./filtro-por-descricao.pipe";
 import {FotoModule} from "../foto/foto.module";
 import {CardModule} from "../../shared/components/card/card.module";
 import { BuscaComponent } from './busca/busca.component';
+import {DarkenOnHoverModule} from "../../shared/diretivas/darken-on-hover/darken-on-hover.module";
 
 @NgModule({
   imports: [
     CommonModule,
     FotoModule,
-    CardModule
+    CardModule,
+    DarkenOnHoverModule
   ],
   declarations: [
     FotoListaComponent,
