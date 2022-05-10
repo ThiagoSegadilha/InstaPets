@@ -6,6 +6,7 @@ import {BotaoLoadComponent} from "./botao-load/botao-load.component";
 import {FiltroPorDescricao} from "./filtro-por-descricao.pipe";
 import {FotoModule} from "../foto/foto.module";
 import {CardModule} from "../../shared/components/card/card.module";
+import { BuscaComponent } from './busca/busca.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import {CardModule} from "../../shared/components/card/card.module";
     FotoListaComponent,
     FotosComponent,
     BotaoLoadComponent,
-    FiltroPorDescricao
+    FiltroPorDescricao,
+    BuscaComponent
   ]
 })
 export class FotoListaModule { }
