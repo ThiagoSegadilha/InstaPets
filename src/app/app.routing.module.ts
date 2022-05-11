@@ -5,8 +5,13 @@ import { FotoListaComponent } from "./fotos/foto-lista/foto-lista.component";
 import { FotoFormComponent } from "./fotos/foto-form/foto-form.component";
 import {NotFoundComponent} from "./erros/not-found/not-found.component";
 import {FotoListaResolver} from "./fotos/foto-lista/foto-lista.resolver";
+import {LoginComponent} from "./home/login/login.component";
 
 const routes: Routes = [
+  {
+    path: '',
+    component: LoginComponent
+  },
   {
     path: 'user/:userName',
     component: FotoListaComponent,

@@ -6,6 +6,7 @@ import {FotosModule} from "./fotos/fotos.module";
 import {AppRoutingModule} from "./app.routing.module";
 import {ErrosModule} from "./erros/erros.module";
 import {FotoListaResolver} from "./fotos/foto-lista/foto-lista.resolver";
+import {HomeModule} from "./home/home.module";
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {FotoListaResolver} from "./fotos/foto-lista/foto-lista.resolver";
     BrowserModule,
     FotosModule,
     AppRoutingModule,
-    ErrosModule
+    ErrosModule,
+    HomeModule
   ],
   providers: [
     FotoListaResolver
