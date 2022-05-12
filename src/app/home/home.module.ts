@@ -4,12 +4,14 @@ import { ReactiveFormsModule } from "@angular/forms";
 
 import { LoginComponent } from "./login/login.component";
 import {ValidacaoMensagemModule} from "../shared/components/validacao-mensagem/validacao-mensagem.module";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    ValidacaoMensagemModule
+    ValidacaoMensagemModule,
+    RouterModule
   ],
   declarations: [
     LoginComponent
