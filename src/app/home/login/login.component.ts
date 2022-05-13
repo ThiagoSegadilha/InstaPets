@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import {AuthService} from "../../core/auth.service";
 import {Router} from "@angular/router";
@@ -11,6 +11,7 @@ import {Router} from "@angular/router";
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup
+  @ViewChild('nomeUsuarioInput') nomeUsuarioInput: ElementRef<HTMLInputElement>;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -33,7 +34,11 @@ export class LoginComponent implements OnInit {
       .autenticacao(nomeUsuario, senha)
       .subscribe(
         () => this.router.navigate([`user`, nomeUsuario]),
-        erro => alert('Usuario ou senha invalida')
+        erro => {
+          this.loginForm.reset();
+          this.nomeUsuarioInput.nativeElement.focus();
+          alert('Usuario ou senha invalida');
+        }
       );
   }
 }
