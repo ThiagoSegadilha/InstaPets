@@ -1,7 +1,8 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import {AuthService} from "../../core/auth.service";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {AuthService} from "../../core/auth/auth.service";
 import {Router} from "@angular/router";
+import {DetectorDePlataformaService} from "../../core/detector-de-plataforma/detector-de-plataforma.service";
 
 @Component({
   selector: 'app-login',
@@ -16,8 +17,10 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private router: Router
-  ) { }
+    private router: Router,
+    private detectorDePlataformaService: DetectorDePlataformaService
+  ) {
+  }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -36,6 +39,7 @@ export class LoginComponent implements OnInit {
         () => this.router.navigate([`user`, nomeUsuario]),
         erro => {
           this.loginForm.reset();
+          this.detectorDePlataformaService.isPlataformaBrowser() &&
           this.nomeUsuarioInput.nativeElement.focus();
           alert('Usuario ou senha invalida');
         }
