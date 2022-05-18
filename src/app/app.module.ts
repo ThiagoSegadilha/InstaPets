@@ -7,18 +7,20 @@ import {AppRoutingModule} from "./app.routing.module";
 import {ErrosModule} from "./erros/erros.module";
 import {FotoListaResolver} from "./fotos/foto-lista/foto-lista.resolver";
 import {HomeModule} from "./home/home.module";
+import {CoreModule} from "./core/core.module";
 
 @NgModule({
   declarations: [
     AppComponent
   ],
-  imports: [
-    BrowserModule,
-    FotosModule,
-    AppRoutingModule,
-    ErrosModule,
-    HomeModule
-  ],
+    imports: [
+        BrowserModule,
+        FotosModule,
+        AppRoutingModule,
+        ErrosModule,
+        HomeModule,
+        CoreModule
+    ],
   providers: [
     FotoListaResolver
   ],
