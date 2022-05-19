@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { LoginComponent } from "./login/login.component";
 import {ValidacaoMensagemModule} from "../shared/components/validacao-mensagem/validacao-mensagem.module";
 import {RouterModule} from "@angular/router";
+import {CadastroComponent} from "./cadastro/cadastro.component";
 
 @NgModule({
   imports: [
@@ -14,10 +15,12 @@ import {RouterModule} from "@angular/router";
     RouterModule
   ],
   declarations: [
-    LoginComponent
+    LoginComponent,
+    CadastroComponent
   ],
   exports: [
-    LoginComponent
+    LoginComponent,
+    CadastroComponent
   ]
 })
 export class HomeModule { }

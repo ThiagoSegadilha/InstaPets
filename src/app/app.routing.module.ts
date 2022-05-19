@@ -6,11 +6,16 @@ import { FotoFormComponent } from "./fotos/foto-form/foto-form.component";
 import {NotFoundComponent} from "./erros/not-found/not-found.component";
 import {FotoListaResolver} from "./fotos/foto-lista/foto-lista.resolver";
 import {LoginComponent} from "./home/login/login.component";
+import {CadastroComponent} from "./home/cadastro/cadastro.component";
 
 const routes: Routes = [
   {
     path: '',
     component: LoginComponent
+  },
+  {
+    path: 'cadastro',
+    component: CadastroComponent,
   },
   {
     path: 'user/:userName',
