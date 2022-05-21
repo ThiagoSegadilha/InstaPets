@@ -36,8 +36,8 @@
       text="Nome Completo é obrigatório">
     </app-validacao-mensagem>
     <app-validacao-mensagem
-      *ngIf="cadastroForm.get('nomeUsuario').errors?.pattern"
-      text="NSomente letra minuscula">
+      *ngIf="cadastroForm.get('nomeUsuario').errors?.letraMinuscula"
+      text="Somente letra minuscula">
     </app-validacao-mensagem>
     <app-validacao-mensagem
       *ngIf="cadastroForm.get('nomeUsuario').errors?.minlength"
@@ -65,7 +65,7 @@
     </app-validacao-mensagem>
   </div>
 
-  <button class="btn btn-primary btn-block">Register</button>
+  <button [disabled]="cadastroForm.invalid" class="btn btn-primary btn-block">Register</button>
 
   <p>Already a user?<a [routerLink]="['']">Sign In!</a></p>
 </form>

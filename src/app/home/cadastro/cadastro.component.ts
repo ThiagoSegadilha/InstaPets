@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {letraMinusculaValidator} from "../../shared/validadores/letra-minuscula.validator";
 
 @Component({
   selector: 'app-logout',
@@ -32,7 +33,7 @@ export class CadastroComponent implements OnInit {
       nomeUsuario: ['',
         [
           Validators.required,
-          Validators.pattern(/^[a-z0-9_\-]+$/),
+          letraMinusculaValidator,
           Validators.minLength(2),
           Validators.maxLength(30)
         ]
