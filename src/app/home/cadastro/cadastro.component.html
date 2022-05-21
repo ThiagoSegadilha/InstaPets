@@ -47,6 +47,12 @@
       *ngIf="cadastroForm.get('nomeUsuario').errors?.maxlength"
       text="No maximo 30 caracteres">
     </app-validacao-mensagem>
+
+    <app-validacao-mensagem
+      text="Username already taken"
+      *ngIf="cadastroForm.get('nomeUsuario').errors?.nomeUsuarioExiste">
+    </app-validacao-mensagem>
+    <small *ngIf="cadastroForm.get('nomeUsuario').valid" class="text-success">Usuário permitido</small>
   </div>
 
   <div class="form-group">
@@ -65,7 +71,7 @@
     </app-validacao-mensagem>
   </div>
 
-  <button [disabled]="cadastroForm.invalid" class="btn btn-primary btn-block">Register</button>
+  <button [disabled]="cadastroForm.invalid || cadastroForm.pending" class="btn btn-primary btn-block">Register</button>
 
   <p>Already a user?<a [routerLink]="['']">Sign In!</a></p>
 </form>

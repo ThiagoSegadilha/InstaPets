@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {letraMinusculaValidator} from "../../shared/validadores/letra-minuscula.validator";
+import {UsuarioJaExisteValidatorService} from "./usuario-ja-existe.validator.service";
 
 @Component({
   selector: 'app-logout',
@@ -12,7 +13,8 @@ export class CadastroComponent implements OnInit {
   cadastroForm: FormGroup;
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private usuarioJaExisteValidatorService: UsuarioJaExisteValidatorService
   ) { }
 
   ngOnInit() {
@@ -36,7 +38,8 @@ export class CadastroComponent implements OnInit {
           letraMinusculaValidator,
           Validators.minLength(2),
           Validators.maxLength(30)
-        ]
+        ],
+        this.usuarioJaExisteValidatorService.checaNomeUsuario()
       ],
       senha: ['',
         [
