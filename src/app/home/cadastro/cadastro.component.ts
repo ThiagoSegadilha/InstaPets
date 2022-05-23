@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {letraMinusculaValidator} from "../../shared/validadores/letra-minuscula.validator";
 import {UsuarioJaExisteValidatorService} from "./usuario-ja-existe.validator.service";
+import {NovoUsuario} from "./novo-usuario";
+import {CadastroService} from "./cadastro.service";
+import {Router} from "@angular/router";
+import {errorObject} from "rxjs/internal-compatibility";
 
 @Component({
   selector: 'app-logout',
@@ -14,7 +18,9 @@ export class CadastroComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private usuarioJaExisteValidatorService: UsuarioJaExisteValidatorService
+    private usuarioJaExisteValidatorService: UsuarioJaExisteValidatorService,
+    private cadastroServise: CadastroService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -49,5 +55,15 @@ export class CadastroComponent implements OnInit {
         ]
       ]
     });
+  }
+
+  cadastro() {
+    const novoUsuario = this.cadastroForm.getRawValue() as NovoUsuario;
+    this.cadastroServise
+      .cadastro(novoUsuario)
+      .subscribe(
+        () => this.router.navigate(['']),
+        erro => console.log(erro)
+      );
   }
 }
