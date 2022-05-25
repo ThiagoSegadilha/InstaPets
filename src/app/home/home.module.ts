@@ -6,6 +6,7 @@ import { LoginComponent } from "./login/login.component";
 import {ValidacaoMensagemModule} from "../shared/components/validacao-mensagem/validacao-mensagem.module";
 import {RouterModule} from "@angular/router";
 import {CadastroComponent} from "./cadastro/cadastro.component";
+import { HomeComponent } from './home.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import {CadastroComponent} from "./cadastro/cadastro.component";
   ],
   declarations: [
     LoginComponent,
-    CadastroComponent
+    CadastroComponent,
+    HomeComponent
   ],
   exports: [
     LoginComponent,

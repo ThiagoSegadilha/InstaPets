@@ -2,7 +2,7 @@
 
 <form [formGroup]="cadastroForm" class="form mt-4" (submit)="cadastro()">
   <div class="form-group">
-    <input formControlName="email" placeholder="email" class="form-control" autofocus>
+    <input #inputEmail formControlName="email" placeholder="email" class="form-control" autofocus>
     <app-validacao-mensagem
       *ngIf="cadastroForm.get('email').errors?.required"
       text="Email do usuário é obrigatório">

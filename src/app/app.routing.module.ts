@@ -7,15 +7,23 @@ import {NotFoundComponent} from "./erros/not-found/not-found.component";
 import {FotoListaResolver} from "./fotos/foto-lista/foto-lista.resolver";
 import {LoginComponent} from "./home/login/login.component";
 import {CadastroComponent} from "./home/cadastro/cadastro.component";
+import {HomeComponent} from "./home/home.component";
 
 const routes: Routes = [
   {
     path: '',
-    component: LoginComponent
-  },
-  {
-    path: 'cadastro',
-    component: CadastroComponent,
+    component: HomeComponent,
+    // canActivate: [AuthGuard],
+    children: [
+      {
+        path: '',
+        component: LoginComponent,
+      },
+      {
+        path: 'cadastro',
+        component: CadastroComponent,
+      },
+    ]
   },
   {
     path: 'user/:userName',

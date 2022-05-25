@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {letraMinusculaValidator} from "../../shared/validadores/letra-minuscula.validator";
 import {UsuarioJaExisteValidatorService} from "./usuario-ja-existe.validator.service";
@@ -6,6 +6,7 @@ import {NovoUsuario} from "./novo-usuario";
 import {CadastroService} from "./cadastro.service";
 import {Router} from "@angular/router";
 import {errorObject} from "rxjs/internal-compatibility";
+import {DetectorDePlataformaService} from "../../core/detector-de-plataforma/detector-de-plataforma.service";
 
 @Component({
   selector: 'app-logout',
@@ -15,13 +16,16 @@ import {errorObject} from "rxjs/internal-compatibility";
 export class CadastroComponent implements OnInit {
 
   cadastroForm: FormGroup;
+  @ViewChild('inputEmail') inputEmail: ElementRef<HTMLInputElement>;
 
   constructor(
     private formBuilder: FormBuilder,
     private usuarioJaExisteValidatorService: UsuarioJaExisteValidatorService,
     private cadastroServise: CadastroService,
-    private router: Router
-  ) { }
+    private router: Router,
+    private detectorDePlataformaService: DetectorDePlataformaService
+  ) {
+  }
 
   ngOnInit() {
     this.cadastroForm = this.formBuilder.group({
@@ -55,6 +59,9 @@ export class CadastroComponent implements OnInit {
         ]
       ]
     });
+
+    this.detectorDePlataformaService.isPlataformaBrowser() &&
+      this.inputEmail.nativeElement.focus();
   }
 
   cadastro() {
