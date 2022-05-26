@@ -8,6 +8,7 @@ import {RouterModule} from "@angular/router";
 import {CadastroComponent} from "./cadastro/cadastro.component";
 import { HomeComponent } from './home.component';
 import {HomeRoutingModule} from "./home.routing.module";
+import {CadastroService} from "./cadastro/cadastro.service";
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import {HomeRoutingModule} from "./home.routing.module";
   exports: [
     LoginComponent,
     CadastroComponent
-  ]
+  ],
+  providers: [ CadastroService ]
 })
 export class HomeModule { }

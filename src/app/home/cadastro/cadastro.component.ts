@@ -5,13 +5,13 @@ import {UsuarioJaExisteValidatorService} from "./usuario-ja-existe.validator.ser
 import {NovoUsuario} from "./novo-usuario";
 import {CadastroService} from "./cadastro.service";
 import {Router} from "@angular/router";
-import {errorObject} from "rxjs/internal-compatibility";
 import {DetectorDePlataformaService} from "../../core/detector-de-plataforma/detector-de-plataforma.service";
 
 @Component({
   selector: 'app-logout',
   templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.css']
+  styleUrls: ['./cadastro.component.css'],
+  providers: [ UsuarioJaExisteValidatorService ]
 })
 export class CadastroComponent implements OnInit {
 
