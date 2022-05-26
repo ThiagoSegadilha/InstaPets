@@ -8,12 +8,13 @@ import {FotoListaResolver} from "./fotos/foto-lista/foto-lista.resolver";
 import {LoginComponent} from "./home/login/login.component";
 import {CadastroComponent} from "./home/cadastro/cadastro.component";
 import {HomeComponent} from "./home/home.component";
+import {AuthGuard} from "./core/auth/auth.guard";
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',
