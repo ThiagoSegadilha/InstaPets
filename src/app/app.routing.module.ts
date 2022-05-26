@@ -13,18 +13,12 @@ import {AuthGuard} from "./core/auth/auth.guard";
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
-    canActivate: [AuthGuard],
-    children: [
-      {
-        path: '',
-        component: LoginComponent,
-      },
-      {
-        path: 'cadastro',
-        component: CadastroComponent,
-      },
-    ]
+    pathMatch: 'full',
+    redirectTo: 'home'
+  },
+  {
+    path: 'home',
+    loadChildren: './home/home.module#HomeModule'
   },
   {
     path: 'user/:userName',

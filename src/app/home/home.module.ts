@@ -7,13 +7,15 @@ import {ValidacaoMensagemModule} from "../shared/components/validacao-mensagem/v
 import {RouterModule} from "@angular/router";
 import {CadastroComponent} from "./cadastro/cadastro.component";
 import { HomeComponent } from './home.component';
+import {HomeRoutingModule} from "./home.routing.module";
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
     ValidacaoMensagemModule,
-    RouterModule
+    RouterModule,
+    HomeRoutingModule
   ],
   declarations: [
     LoginComponent,
